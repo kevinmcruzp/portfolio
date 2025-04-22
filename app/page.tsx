@@ -1,103 +1,89 @@
-import Image from "next/image";
+// app/page.js
+'use client';
+import { useState, useEffect } from 'react';
+
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [showFloating, setShowFloating] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    setIsLoaded(true);
+    setTimeout(() => {
+      setShowFloating(true);
+    }, 800);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-black bg-opacity-90 bg-[radial-gradient(ellipse_at_top_right,_rgba(120,40,180,0.3),transparent_70%),radial-gradient(ellipse_at_bottom_left,_rgba(40,180,120,0.3),transparent_70%)] text-white flex items-center justify-center overflow-hidden relative">
+      <div 
+        className={`
+          flex flex-col items-center justify-between
+          transition-all duration-1000 transform
+          ${isLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}
+        `}
+      >
+        <div className="bg-gray-950/40 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center mb-6 max-w-lg">
+          <h1 className={`text-3xl font-bold mb-3 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+            Olá, eu sou <span className="bg-indigo-600 text-white px-3 py-1 rounded-md">Kevin Cruz</span> 👋
+          </h1>
+          <p className={`text-xl mb-3 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+            Sou um <span className="bg-orange-500 text-white px-3 py-1 rounded-md">Engenheiro em Computação</span>
+          </p>
+          <p className={`text-lg transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+            atualmente em <span className="bg-green-500 text-white px-3 py-1 rounded-md">Aceno tecnologia ↗</span>
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Navigation icons */}
+        <div 
+          className={`
+            flex justify-center gap-3 transition-all duration-700 delay-500 bg-gray-950/40
+            w-fit p-2 rounded-xl
+            ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          >
+          <NavIcon icon={<p>Asdasd</p>} />
+          <NavIcon icon={<p>Asdasd</p>} />
+          <NavIcon icon={<p>Asdasd</p>} />
+          <NavIcon icon={<p>Asdasd</p>} />
+          {/* <NavIcon icon={<Code size={20} />} />
+          <NavIcon icon={<Folder size={20} />} />
+          <NavIcon icon={<Award size={20} />} />
+          <NavIcon icon={<Mail size={20} />} />
+          <NavIcon icon={<Github size={20} />} />
+          <NavIcon icon={<Linkedin size={20} />} /> */}
+        </div>
+      </div>
+
+      {showFloating && (
+        <>
+          <FloatingElement className="left-1/4 top-1/4" />
+          <FloatingElement className="right-1/4 bottom-1/3" />
+          <FloatingElement className="left-1/3 bottom-1/4" />
+        </>
+      )}
+    </div>
+  );
+}
+
+function NavIcon({ icon }) {
+  return (
+    <div className="bg-gray-950/40 hover:bg-gray-950/80 transition-colors p-3 rounded-md cursor-pointer border border-gray-800">
+      {icon}
+    </div>
+  );
+}
+
+function FloatingElement({ className }) {
+  return (
+    <div 
+      className={`absolute opacity-30 w-16 h-16 rotate-12 animate-pulse ${className}`}
+      style={{ 
+        animation: `float 7s infinite ease-in-out, pulse 3s infinite ease-in-out`,
+        animationDelay: `${Math.random() * 5}s`
+      }}
+    >
+      <div className="w-full h-full bg-gradient-to-br from-indigo-500 to-purple-600 rounded-md"></div>
     </div>
   );
 }
