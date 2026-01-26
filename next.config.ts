@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        hostname: process.env.NEXT_PUBLIC_URL_DOMAIN_IMAGE || 'example.com',
+        pathname: '**',
+        protocol: 'https',
+      },
+    ],
+  }
 };
 
 export default nextConfig;

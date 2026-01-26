@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
+@theme {
+  /* Nordic Color Palette */
+  --color-nordic-void: #0b0c10;
+  --color-nordic-wood: #1c1917;
+  --color-nordic-iron: #c5c6c7;
+  --color-nordic-bronze: #c24d2c;
+  --color-nordic-gold: #d4b483;
+  --color-nordic-parchment: #e7e5e4;
+}
+
 :root {
-  --background: #000000;
-  --foreground: #FFFFFF;
+  --font-cinzel: 'Cinzel', serif;
+  --font-inter: 'Inter', sans-serif;
 }
 
 @keyframes float {
@@ -18,4 +28,21 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0c10;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c1917;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
+}
+

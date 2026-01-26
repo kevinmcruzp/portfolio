@@ -1,89 +1,82 @@
-// app/page.js
-'use client';
-import { useState, useEffect } from 'react';
-
+"use client";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Download } from "lucide-react";
+import { ForgedText } from "./components/ui/animation/ForgetText";
+import Image from "next/image";
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [showFloating, setShowFloating] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-    setTimeout(() => {
-      setShowFloating(true);
-    }, 800);
-  }, []);
-
   return (
-    <div className="min-h-screen bg-black bg-opacity-90 bg-[radial-gradient(ellipse_at_top_right,_rgba(120,40,180,0.3),transparent_70%),radial-gradient(ellipse_at_bottom_left,_rgba(40,180,120,0.3),transparent_70%)] text-white flex items-center justify-center overflow-hidden relative">
-      <div 
-        className={`
-          flex flex-col items-center justify-between
-          transition-all duration-1000 transform
-          ${isLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}
-        `}
-      >
-        <div className="bg-gray-950/40 backdrop-blur-sm p-6 rounded-xl shadow-xl text-center mb-6 max-w-lg">
-          <h1 className={`text-3xl font-bold mb-3 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-            Olá, eu sou <span className="bg-indigo-600 text-white px-3 py-1 rounded-md">Kevin Cruz</span> 👋
-          </h1>
-          <p className={`text-xl mb-3 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-            Sou um <span className="bg-orange-500 text-white px-3 py-1 rounded-md">Engenheiro em Computação</span>
-          </p>
-          <p className={`text-lg transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-            atualmente em <span className="bg-green-500 text-white px-3 py-1 rounded-md">Aceno tecnologia ↗</span>
-          </p>
-        </div>
+    <main className="relative min-h-screen bg-nordic-void text-nordic-parchment selection:bg-nordic-gold selection:text-nordic-void overflow-x-hidden">      
+      <div className="max-w-350 mx-auto relative z-10 pl-6 pr-6 md:pr-32">
+        <section id="hero" className="min-h-screen flex items-center pt-20 pb-20">
+            <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+                {/* Coluna Esquerda: Texto de Apresentação */}
+                <motion.div 
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                >
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-nordic-gold mb-6 leading-tight">
+                        <ForgedText text="KEVIN" />
+                        <ForgedText text="PIZARRO" />
+                    </h1>
 
-        {/* Navigation icons */}
-        <div 
-          className={`
-            flex justify-center gap-3 transition-all duration-700 delay-500 bg-gray-950/40
-            w-fit p-2 rounded-xl
-            ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-          >
-          <NavIcon icon={<p>Asdasd</p>} />
-          <NavIcon icon={<p>Asdasd</p>} />
-          <NavIcon icon={<p>Asdasd</p>} />
-          <NavIcon icon={<p>Asdasd</p>} />
-          {/* <NavIcon icon={<Code size={20} />} />
-          <NavIcon icon={<Folder size={20} />} />
-          <NavIcon icon={<Award size={20} />} />
-          <NavIcon icon={<Mail size={20} />} />
-          <NavIcon icon={<Github size={20} />} />
-          <NavIcon icon={<Linkedin size={20} />} /> */}
-        </div>
+                    <p className="text-lg text-stone-400 max-w-lg leading-relaxed mb-8 border-l-4 border-nordic-iron pl-6">
+                        Desenvolvedor focado em interfaces robustas e arquiteturas escaláveis. Transformando código bruto em soluções duradouras.
+                    </p>
+
+                    <div className="flex flex-wrap gap-4">
+                        <button className="cursor-pointer px-8 py-4 bg-nordic-bronze text-white font-serif tracking-widest hover:bg-white hover:text-nordic-wood transition-colors shadow-[0_0_20px_rgba(180,83,9,0.2)]">
+                            VER PORTFÓLIO
+                        </button>
+                        <button className="cursor-pointer px-8 py-4 border border-nordic-iron text-stone-400 font-serif tracking-widest hover:border-nordic-gold hover:text-nordic-gold transition-colors flex items-center gap-2">
+                            <Download size={18} /> CV
+                        </button>
+                    </div>
+
+                    <div className="flex gap-6 mt-12 opacity-60">
+                        <Github className="hover:text-nordic-gold cursor-pointer transition-colors" />
+                        <Linkedin className="hover:text-nordic-gold cursor-pointer transition-colors" />
+                    </div>
+                </motion.div>
+
+                {/* Coluna Direita: Imagem / Moldura */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, delay: 0.8 }}
+                    className="relative flex justify-center lg:justify-end"
+                >
+                    <div className="relative w-87.5 h-112.5 md:w-112.5 md:h-137.5">
+                        <div className="absolute -inset-4 border-2 border-nordic-iron rounded-t-full z-0"></div>
+                        <div className="absolute -inset-2 border border-nordic-bronze/30 rounded-t-full z-0"></div>
+                        
+                        {/* Container da Imagem */}
+                        <div className="absolute inset-0 bg-nordic-wood rounded-t-full overflow-hidden border-b-4 border-nordic-bronze grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
+                             {/* Fundo gradiente para caso não tenha imagem ainda */}
+                             <div className="w-full h-full bg-gradient-to-b from-stone-800 to-nordic-void flex items-center justify-center">
+                                <span className="font-serif text-nordic-iron text-9xl opacity-20">img</span>
+                                <Image src="https://picsum.photos/300/200?random=2" alt="photo" fill className="object-cover" />
+                             </div>
+                             
+                             {/* Overlay gradiente inferior para integrar com o fundo */}
+                             <div className="w-full absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-nordic-void to-transparent" />
+                        </div>
+
+                        {/* Indicador de Experiência */}
+                        <motion.div
+                            className="absolute -bottom-6 -left-6 bg-nordic-wood border border-nordic-bronze p-4 shadow-xl z-20"
+                            animate={{ y: [0, -10, 0] }}
+                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                            <div className="text-nordic-gold font-serif text-2xl font-bold">2+</div>
+                            <div className="text-stone-500 text-xs tracking-widest uppercase">Anos XP</div>
+                        </motion.div>
+                    </div>
+                </motion.div>
+            </div>
+        </section>
       </div>
-
-      {showFloating && (
-        <>
-          <FloatingElement className="left-1/4 top-1/4" />
-          <FloatingElement className="right-1/4 bottom-1/3" />
-          <FloatingElement className="left-1/3 bottom-1/4" />
-        </>
-      )}
-    </div>
-  );
-}
-
-function NavIcon({ icon }) {
-  return (
-    <div className="bg-gray-950/40 hover:bg-gray-950/80 transition-colors p-3 rounded-md cursor-pointer border border-gray-800">
-      {icon}
-    </div>
-  );
-}
-
-function FloatingElement({ className }) {
-  return (
-    <div 
-      className={`absolute opacity-30 w-16 h-16 rotate-12 animate-pulse ${className}`}
-      style={{ 
-        animation: `float 7s infinite ease-in-out, pulse 3s infinite ease-in-out`,
-        animationDelay: `${Math.random() * 5}s`
-      }}
-    >
-      <div className="w-full h-full bg-gradient-to-br from-indigo-500 to-purple-600 rounded-md"></div>
-    </div>
+    </main>
   );
 }
