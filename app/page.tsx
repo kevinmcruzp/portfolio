@@ -3,10 +3,13 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Download } from "lucide-react";
 import { ForgedText } from "./components/ui/animation/ForgetText";
 import Image from "next/image";
+import { SnowFall } from "./components/Snowfall";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-nordic-void text-nordic-parchment selection:bg-nordic-gold selection:text-nordic-void overflow-x-hidden">      
+        <SnowFall />
+
       <div className="max-w-350 mx-auto relative z-10 pl-6 pr-6 md:pr-32">
         <section id="hero" className="min-h-screen flex items-center pt-20 pb-20">
             <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
