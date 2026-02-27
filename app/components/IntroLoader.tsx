@@ -3,27 +3,10 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Hammer, Sparkles } from "lucide-react"; // Ícone temático
 
-export default function IntroLoader({ onComplete }: { onComplete: () => void }) {
-  const [show, setShow] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(false);
-      onComplete();
-    }, 2500);
-    return () => clearTimeout(timer);
-  }, [onComplete]);
-
-  if (!show) return null;
+export default function IntroLoader() {
 
   return (
-    <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950"
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 0 }}
-      transition={{ duration: 0.8, delay: 2 }}
-    >
-
+    <motion.div className="z-20 flex flex-col items-center relative">
       <Sparkles className="text-nordic-gold animate-pulse" />
 
       <div className="flex flex-col items-center">
@@ -42,22 +25,16 @@ export default function IntroLoader({ onComplete }: { onComplete: () => void }) 
 
             <Hammer className="w-14 h-14 text-nordic-gold" />
           </div>
-
         </motion.div>
 
-        <motion.div
-          className="mt-4 h-1 w-32 bg-slate-800 rounded overflow-hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
+        <div className="mt-4 w-48 h-1 bg-nordic-iron rounded overflow-hidden">
           <motion.div
-            className="h-full bg-viking-gold"
-            initial={{ width: "0%" }}
+            className="h-full bg-linear-to-r from-nordic-bronze to-nordic-gold"
+            initial={{ width: 0 }}
             animate={{ width: "100%" }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 2.5 }}
           />
-        </motion.div>
+        </div>
 
         <motion.p
           className="mt-2 text-viking-mist font-serif text-sm tracking-[0.3em]"

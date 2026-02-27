@@ -7,6 +7,7 @@ import { SnowFall } from "./components/Snowfall";
 import { useState } from "react";
 import IntroLoader from "./components/IntroLoader";
 import { TorchEffect } from "./components/ui/animation/TorchEffect";
+import { GateLoader } from "./components/ui/animation/GateLoader";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +16,7 @@ export default function Home() {
         <main className="relative min-h-screen bg-nordic-void text-nordic-parchment selection:bg-nordic-gold selection:text-nordic-void overflow-x-hidden">
             <SnowFall />
 
-            <IntroLoader onComplete={() => setIsLoading(false)} />
+            <GateLoader onComplete={() => setIsLoading(false)} />
 
             <TorchEffect />
 
