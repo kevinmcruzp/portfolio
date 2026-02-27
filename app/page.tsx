@@ -5,8 +5,8 @@ import { ForgedText } from "./components/ui/animation/ForgetText";
 import Image from "next/image";
 import { SnowFall } from "./components/Snowfall";
 import { useState } from "react";
-import { Reveal } from "./components/Reveal";
 import IntroLoader from "./components/IntroLoader";
+import { TorchEffect } from "./components/ui/animation/TorchEffect";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -16,6 +16,8 @@ export default function Home() {
             <SnowFall />
 
             <IntroLoader onComplete={() => setIsLoading(false)} />
+
+            <TorchEffect />
 
             <div className="max-w-350 mx-auto relative z-10 pl-6 pr-6 md:pr-32">
                 <section id="hero" className="min-h-screen flex items-center pt-20 pb-20">
