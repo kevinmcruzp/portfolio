@@ -1,12 +1,22 @@
 "use client";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Download } from "lucide-react";
+import { Github, Linkedin, Download, ArrowDown, Layout, Database, Code, Shield } from "lucide-react";
 import { ForgedText } from "./components/ui/animation/ForgetText";
 import Image from "next/image";
 import { SnowFall } from "./components/Snowfall";
 import { useState } from "react";
 import { TorchEffect } from "./components/ui/animation/TorchEffect";
 import { GateLoader } from "./components/ui/animation/GateLoader";
+import { SideNav } from "./components/SideNav";
+import { ObsidianCard } from "./components/ObsidianCard";
+
+// --- DATA ---
+const SKILLS = [
+    { icon: <Layout />, title: "Frontend", desc: "React, Next.js, Tailwind, Motion" },
+    { icon: <Database />, title: "Backend", desc: "Node.js, PostgreSQL, Prisma" },
+    { icon: <Code />, title: "Architecture", desc: "Clean Code, SOLID, Microservices" },
+    { icon: <Shield />, title: "DevOps", desc: "Docker, AWS, CI/CD" },
+];
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -19,8 +29,15 @@ export default function Home() {
 
             <TorchEffect />
 
+            <SideNav />
+
             <div className="max-w-350 mx-auto relative z-10 pl-6 pr-6 md:pr-32">
-                <section id="hero" className={`min-h-screen flex items-center pt-20 pb-20 ${isLoading ? "opacity-0" : "opacity-100"} transition-opacity duration-1000`}>
+                {/* --- HOME SECTION --- */}
+                <section 
+                    id="hero" 
+                    className={
+                        `min-h-screen flex items-center pt-20 pb-20 ${isLoading ? "opacity-0" : "opacity-100"} transition-opacity duration-1000 relative`
+                    }>
                     <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
                         {/* Coluna Esquerda: Texto de Apresentação */}
                         <motion.div
@@ -86,6 +103,36 @@ export default function Home() {
                                 </motion.div>
                             </div>
                         </motion.div>
+                    </div>
+
+                    <motion.div
+                        className="absolute bottom-12 left-1/2 -translate-x-1/2 text-nordic-parchment/50"
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                    >
+                        <ArrowDown size={20} />
+                    </motion.div>
+                </section>
+
+                {/* --- SAGA (SKILLS) --- */}
+                <section id="saga" className="py-32 px-6 relative z-10">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="mb-16 flex items-end justify-between border-b border-nordic-parchment/10 pb-6">
+                            <h2 className="text-4xl font-serif text-nordic-gold">Minha Saga</h2>
+                            <span className="hidden md:block text-xs font-serif tracking-widest text-nordic-parchment/40">Habilidades & Ferramentas</span>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {SKILLS.map((skill, i) => (
+                                <ObsidianCard key={i} className="h-full">
+                                    <div className="mb-4 text-nordic-gold">{skill.icon}</div>
+                                    <h3 className="text-xl font-serif text-white mb-2">{skill.title}</h3>
+                                    <p className="text-sm text-nordic-parchment/60 leading-relaxed">
+                                        {skill.desc}
+                                    </p>
+                                </ObsidianCard>
+                            ))}
+                        </div>
                     </div>
                 </section>
             </div>
