@@ -5,7 +5,6 @@ import { ForgedText } from "./components/ui/animation/ForgetText";
 import Image from "next/image";
 import { SnowFall } from "./components/Snowfall";
 import { useState } from "react";
-import IntroLoader from "./components/IntroLoader";
 import { TorchEffect } from "./components/ui/animation/TorchEffect";
 import { GateLoader } from "./components/ui/animation/GateLoader";
 
@@ -21,7 +20,7 @@ export default function Home() {
             <TorchEffect />
 
             <div className="max-w-350 mx-auto relative z-10 pl-6 pr-6 md:pr-32">
-                <section id="hero" className="min-h-screen flex items-center pt-20 pb-20">
+                <section id="hero" className={`min-h-screen flex items-center pt-20 pb-20 ${isLoading ? "opacity-0" : "opacity-100"} transition-opacity duration-1000`}>
                     <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
                         {/* Coluna Esquerda: Texto de Apresentação */}
                         <motion.div
