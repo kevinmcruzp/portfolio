@@ -50,7 +50,7 @@ export default function Home() {
         <main className="relative min-h-screen bg-nordic-void text-nordic-parchment selection:bg-nordic-gold selection:text-nordic-void overflow-x-hidden">
             <SnowFall />
 
-            <GateLoader onComplete={() => setIsLoading(false)} />
+            {isLoading && <GateLoader onComplete={() => setIsLoading(false)} />}
 
             <TorchEffect />
 
