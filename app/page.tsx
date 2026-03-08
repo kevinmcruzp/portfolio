@@ -19,32 +19,32 @@ const SKILLS = [
     {
         icon: <Layout />,
         title: "Frontend",
-        desc: "React, Next.js, TypeScript, TailwindCSS, ChakraUI, Framer Motion",
+        items: ["React", "Next.js", "TypeScript", "TailwindCSS", "ChakraUI", "Framer Motion", "HTML5", "CSS3"],
     },
     {
         icon: <Code />,
         title: "Backend",
-        desc: "Node.js, Express.js, C#, PHP, Java, Python, Socket.io, JWT",
+        items: ["Node.js", "Express.js", "C#", "PHP", "Java", "Python", "Socket.io", "JWT"],
     },
     {
         icon: <Database />,
         title: "Banco de Dados",
-        desc: "PostgreSQL, MongoDB, SQLite, Prisma ORM",
+        items: ["PostgreSQL", "MongoDB", "SQLite", "Prisma ORM"],
     },
     {
         icon: <Shield />,
         title: "Cloud & DevOps",
-        desc: "AWS, Vercel, Apache, GitHub, Docker, CI/CD",
+        items: ["AWS", "Vercel", "Apache", "Docker", "GitHub Actions", "CI/CD"],
     },
     {
         icon: <Smartphone />,
         title: "Mobile",
-        desc: "React Native, Expo",
+        items: ["React Native", "Expo"],
     },
     {
         icon: <Globe />,
         title: "Idiomas",
-        desc: "Português (nativo), Español (fluente), English (intermediário)",
+        items: ["Português — nativo", "Español — fluente", "English — intermediário"],
     },
 ];
 
@@ -174,17 +174,42 @@ export default function Home() {
                             <span className="hidden md:block text-xs font-serif tracking-widest text-nordic-parchment/40">Habilidades & Ferramentas</span>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <motion.div
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-80px" }}
+                            variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+                        >
                             {SKILLS.map((skill, i) => (
-                                <ObsidianCard key={i} className="h-full">
-                                    <div className="mb-4 text-nordic-gold">{skill.icon}</div>
-                                    <h3 className="text-xl font-serif text-white mb-2">{skill.title}</h3>
-                                    <p className="text-sm text-nordic-parchment/60 leading-relaxed">
-                                        {skill.desc}
-                                    </p>
-                                </ObsidianCard>
+                                <motion.div
+                                    key={i}
+                                    variants={{
+                                        hidden:  { opacity: 0, y: 30 },
+                                        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+                                    }}
+                                >
+                                    <ObsidianCard className="h-full">
+                                        <div className="flex items-start justify-between mb-5">
+                                            <div className="w-10 h-10 border border-nordic-iron flex items-center justify-center text-nordic-gold">
+                                                {skill.icon}
+                                            </div>
+                                        </div>
+                                        <h3 className="text-xl font-serif text-white mb-4">{skill.title}</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                            {skill.items.map((item) => (
+                                                <span
+                                                    key={item}
+                                                    className="px-2 py-1 bg-nordic-void border border-nordic-parchment/10 text-xs text-nordic-parchment/60 font-mono hover:border-nordic-gold/30 hover:text-nordic-gold/80 transition-colors duration-200"
+                                                >
+                                                    {item}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </ObsidianCard>
+                                </motion.div>
                             ))}
-                        </div>
+                        </motion.div>
                     </div>
                 </section>
 
