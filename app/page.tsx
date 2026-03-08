@@ -103,7 +103,7 @@ export default function Home() {
                         >
                             <div className="relative w-87.5 h-112.5 md:w-112.5 md:h-137.5">
                                 {/* Halo de luz atmosférico */}
-                                <div className="absolute -inset-10 rounded-t-full blur-3xl bg-amber-900/15 z-0 pointer-events-none" />
+                                <div className="absolute -inset-10 rounded-t-full blur-3xl bg-amber-900/15 z-0 pointer-events-none" style={{ willChange: "filter", transform: "translateZ(0)" }} />
 
                                 {/* Anéis do portal */}
                                 <div className="absolute -inset-6 border border-nordic-gold/12 rounded-t-full z-0" />
