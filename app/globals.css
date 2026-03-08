@@ -24,6 +24,19 @@
   }
 }
 
+@keyframes runeGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(212, 180, 131, 0.08), 0 0 50px rgba(194, 77, 44, 0.04), inset 0 0 40px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(212, 180, 131, 0.22), 0 0 90px rgba(194, 77, 44, 0.1), inset 0 0 40px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.rune-glow {
+  animation: runeGlow 4s ease-in-out infinite;
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -9,6 +9,7 @@ import { TorchEffect } from "./components/ui/animation/TorchEffect";
 import { GateLoader } from "./components/ui/animation/GateLoader";
 import { SideNav } from "./components/SideNav";
 import { ObsidianCard } from "./components/ObsidianCard";
+import photo from "../public/photo.jpg";
 
 // --- DATA ---
 const SKILLS = [
@@ -101,19 +102,31 @@ export default function Home() {
                             className="relative flex justify-center lg:justify-end"
                         >
                             <div className="relative w-87.5 h-112.5 md:w-112.5 md:h-137.5">
-                                <div className="absolute -inset-4 border-2 border-nordic-iron rounded-t-full z-0"></div>
-                                <div className="absolute -inset-2 border border-nordic-bronze/30 rounded-t-full z-0"></div>
+                                {/* Halo de luz atmosférico */}
+                                <div className="absolute -inset-10 rounded-t-full blur-3xl bg-amber-900/15 z-0 pointer-events-none" />
+
+                                {/* Anéis do portal */}
+                                <div className="absolute -inset-6 border border-nordic-gold/12 rounded-t-full z-0" />
+                                <div className="absolute -inset-4 border border-nordic-iron/50 rounded-t-full z-0" />
+                                <div className="absolute -inset-2 border border-nordic-bronze/35 rounded-t-full z-0" />
 
                                 {/* Container da Imagem */}
-                                <div className="absolute inset-0 bg-nordic-wood rounded-t-full overflow-hidden border-b-4 border-nordic-bronze grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
-                                    {/* Fundo gradiente para caso não tenha imagem ainda */}
-                                    <div className="w-full h-full bg-gradient-to-b from-stone-800 to-nordic-void flex items-center justify-center">
+                                <div className="absolute inset-0 bg-nordic-wood rounded-t-full overflow-hidden border-b-4 border-nordic-bronze transition-all duration-700 rune-glow group/photo">
+                                    <div className="w-full h-full bg-linear-to-b from-stone-800 to-nordic-void flex items-center justify-center">
                                         <span className="font-serif text-nordic-iron text-9xl opacity-20">img</span>
-                                        <Image src="https://picsum.photos/300/200?random=2" alt="photo" fill className="object-cover" />
+                                        <Image
+                                            src={photo}
+                                            alt="photo"
+                                            fill
+                                            className="object-cover sepia brightness-75 contrast-110 transition-all duration-700 group-hover/photo:brightness-90 group-hover/photo:contrast-125"
+                                        />
                                     </div>
 
-                                    {/* Overlay gradiente inferior para integrar com o fundo */}
-                                    <div className="w-full absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-nordic-void to-transparent" />
+                                    {/* Overlay duotone dourado */}
+                                    <div className="absolute inset-0 bg-amber-900/20 mix-blend-color" />
+
+                                    {/* Gradiente inferior */}
+                                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-nordic-void to-transparent" />
                                 </div>
 
                                 {/* Indicador de Experiência */}
