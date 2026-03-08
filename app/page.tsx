@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Download, ArrowDown, Layout, Database, Code, Shield, ExternalLink } from "lucide-react";
 import { ForgedText } from "./components/ui/animation/ForgetText";
 import Image from "next/image";
+import Link from "next/link";
 import { SnowFall } from "./components/Snowfall";
 import { useState } from "react";
 import { TorchEffect } from "./components/ui/animation/TorchEffect";
@@ -10,6 +11,7 @@ import { GateLoader } from "./components/ui/animation/GateLoader";
 import { SideNav } from "./components/SideNav";
 import { ObsidianCard } from "./components/ObsidianCard";
 import photo from "../public/photo.jpg";
+import { FEATURED_PROJECTS } from "./data/projects";
 
 // --- DATA ---
 const SKILLS = [
@@ -19,29 +21,6 @@ const SKILLS = [
     { icon: <Shield />, title: "DevOps", desc: "Docker, AWS, CI/CD" },
 ];
 
-const PROJECTS = [
-    {
-        id: 1,
-        category: "E-commerce",
-        title: "Nordic Market",
-        desc: "Plataforma de e-commerce com foco em performance e experiência do usuário. Implementação de carrinho persistente, checkout otimizado e integração com múltiplos gateways de pagamento.",
-        tech: ["React", "Next.js", "TypeScript", "Stripe", "PostgreSQL"]
-    },
-    {
-        id: 2,
-        category: "SaaS",
-        title: "TaskForge",
-        desc: "Sistema de gestão de projetos com recursos avançados de colaboração em tempo real, automação de workflows e relatórios detalhados de produtividade.",
-        tech: ["Vue.js", "Node.js", "Socket.io", "MongoDB", "Docker"]
-    },
-    {
-        id: 3,
-        category: "Mobile App",
-        title: "RuneTracker",
-        desc: "Aplicativo de rastreamento de fitness com gamificação, desafios personalizados e integração com wearables. Interface intuitiva e performance otimizada.",
-        tech: ["React Native", "Firebase", "TypeScript", "Redux"]
-    }
-];
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -176,57 +155,85 @@ export default function Home() {
                 {/* --- OBRAS (PROJECTS) --- */}
                 <section id="works" className="py-32 px-6 bg-nordic-void/20 relative">
                     <div className="max-w-6xl mx-auto">
-                        <div className="mb-16">
-                            <h2 className="text-4xl font-serif text-nordic-gold mb-4">Grandes Obras</h2>
-                            <p className="text-nordic-parchment/60 max-w-xl">
-                                Cada projeto é tratado como uma arma única: feita sob medida, equilibrada e letalmente eficiente.
-                            </p>
+                        <div className="mb-16 flex items-end justify-between border-b border-nordic-parchment/10 pb-6">
+                            <div>
+                                <h2 className="text-4xl font-serif text-nordic-gold mb-3">Grandes Obras</h2>
+                                <p className="text-nordic-parchment/60 max-w-xl">
+                                    Cada projeto é tratado como uma arma única: feita sob medida, equilibrada e letalmente eficiente.
+                                </p>
+                            </div>
+                            <Link
+                                href="/projects"
+                                className="hidden md:flex items-center gap-2 text-nordic-parchment/50 hover:text-nordic-gold transition-colors text-xs tracking-widest uppercase font-serif"
+                            >
+                                Ver todos <ExternalLink size={14} />
+                            </Link>
                         </div>
 
                         <div className="space-y-24">
-                            {PROJECTS.map((project, index) => (
+                            {FEATURED_PROJECTS.map((project, index) => (
                                 <motion.div
-                                    key={project.id}
+                                    key={project.key}
                                     initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.8 }}
                                     className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}
                                 >
-                                    {/* Imagem do Projeto (Mockup) */}
-                                    <div className="w-full md:w-3/5 aspect-video bg-nordic-void relative group cursor-pointer overflow-hidden border border-nordic-parchment/10 rounded-sm">
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-nordic-void to-transparent opacity-80 z-10" />
-                                        {/* Placeholder visual */}
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <span className="font-serif text-9xl opacity-5 text-nordic-parchment font-bold">{index + 1}</span>
+                                    {/* Imagem do Projeto */}
+                                    <a
+                                        href={project.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full md:w-3/5 aspect-video bg-nordic-void relative group cursor-pointer overflow-hidden border border-nordic-parchment/10"
+                                    >
+                                        {project.img && (
+                                            <Image
+                                                src={project.img}
+                                                alt={project.alt}
+                                                fill
+                                                className="object-cover group-hover:scale-105 transition-all duration-500"
+                                            />
+                                        )}
+                                        <div className="absolute inset-0 bg-linear-to-tr from-nordic-void/70 to-transparent z-10" />
+                                        <div className="absolute inset-0 bg-nordic-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center">
+                                            <ExternalLink size={28} className="text-nordic-gold" />
                                         </div>
-                                        <div className="absolute inset-0 bg-nordic-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
-                                    </div>
+                                    </a>
 
                                     {/* Detalhes */}
                                     <div className="w-full md:w-2/5 space-y-6">
-                                        <div className="text-nordic-bronze font-serif text-xs tracking-[0.2em] uppercase">
-                                            {project.category}
-                                        </div>
                                         <h3 className="text-4xl font-serif text-white">{project.title}</h3>
-                                        <p className="text-nordic-parchment/70 leading-relaxed border-l-2 border-nordic-gold/20 pl-4">
-                                            {project.desc}
-                                        </p>
                                         <div className="flex flex-wrap gap-3">
-                                            {project.tech.map(t => (
+                                            {project.tags.map(t => (
                                                 <span key={t} className="px-3 py-1 bg-nordic-void border border-nordic-parchment/20 text-xs text-nordic-gold font-mono">
                                                     {t}
                                                 </span>
                                             ))}
                                         </div>
                                         <div className="pt-4">
-                                            <button className="flex items-center gap-2 text-white hover:text-nordic-gold transition-colors text-sm uppercase tracking-widest font-bold group">
-                                                Ver Case <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
-                                            </button>
+                                            <a
+                                                href={project.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center gap-2 text-white hover:text-nordic-gold transition-colors text-sm uppercase tracking-widest font-bold group"
+                                            >
+                                                Ver Projeto <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+                                            </a>
                                         </div>
                                     </div>
                                 </motion.div>
                             ))}
+                        </div>
+
+                        {/* CTA mobile */}
+                        <div className="mt-16 flex justify-center md:hidden">
+                            <Link
+                                href="/projects"
+                                className="px-8 py-4 border border-nordic-bronze text-nordic-gold font-serif tracking-widest hover:bg-nordic-gold/10 transition-colors text-sm uppercase"
+                            >
+                                Ver todos os projetos
+                            </Link>
                         </div>
                     </div>
                 </section>
