@@ -7,6 +7,7 @@ import { SnowFall } from "../components/Snowfall";
 import { TorchEffect } from "../components/ui/animation/TorchEffect";
 import { ObsidianCard } from "../components/ObsidianCard";
 import photo from "../../public/photo.jpg";
+import { config } from "../config";
 
 const STACK = [
     { category: "Linguagens", items: ["TypeScript", "JavaScript", "C#", "Python", "Java", "PHP"] },
@@ -139,10 +140,10 @@ export default function AboutPage() {
                         </div>
 
                         <div className="flex gap-5 pt-4">
-                            <a href="https://github.com/KevinMCruzP" target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors"><Github size={20} /></a>
-                            <a href="https://linkedin.com/in/kevinmcruzp" target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors"><Linkedin size={20} /></a>
-                            <a href="https://instagram.com/kevin.pizarro.cruz" target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors"><Instagram size={20} /></a>
-                            <a href="https://youtube.com/@KevinMCruzP" target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors"><Youtube size={20} /></a>
+                            <a href={config.github}    target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors"><Github size={20} /></a>
+                            <a href={config.linkedin}  target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors"><Linkedin size={20} /></a>
+                            <a href={config.instagram} target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors"><Instagram size={20} /></a>
+                            <a href={config.youtube}   target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors"><Youtube size={20} /></a>
                         </div>
                     </div>
 

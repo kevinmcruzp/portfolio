@@ -12,6 +12,7 @@ import { SideNav } from "./components/SideNav";
 import { ObsidianCard } from "./components/ObsidianCard";
 import photo from "../public/photo.jpg";
 import { FEATURED_PROJECTS } from "./data/projects";
+import { config } from "./config";
 
 // --- DATA ---
 const SKILLS = [
@@ -89,22 +90,22 @@ export default function Home() {
                             </p>
 
                             <div className="flex flex-wrap gap-4">
-                                <button className="cursor-pointer px-8 py-4 bg-nordic-bronze text-white font-serif tracking-widest hover:bg-white hover:text-nordic-wood transition-colors shadow-[0_0_20px_rgba(180,83,9,0.2)]">
-                                    VER PORTFÓLIO
-                                </button>
-                                <button className="cursor-pointer px-8 py-4 border border-nordic-iron text-stone-400 font-serif tracking-widest hover:border-nordic-gold hover:text-nordic-gold transition-colors flex items-center gap-2">
+                                <Link href="/projects" className="px-8 py-4 bg-nordic-bronze text-white font-serif tracking-widest hover:bg-white hover:text-nordic-wood transition-colors shadow-[0_0_20px_rgba(180,83,9,0.2)]">
+                                    VER PROJETOS
+                                </Link>
+                                <a href={config.cv} target="_blank" rel="noopener noreferrer" className="px-8 py-4 border border-nordic-iron text-stone-400 font-serif tracking-widest hover:border-nordic-gold hover:text-nordic-gold transition-colors flex items-center gap-2">
                                     <Download size={18} /> CV
-                                </button>
+                                </a>
                                 <Link href="/about" className="px-8 py-4 border border-nordic-parchment/20 text-nordic-parchment/50 font-serif tracking-widest hover:border-nordic-gold hover:text-nordic-gold transition-colors text-sm flex items-center">
                                     SOBRE MIM
                                 </Link>
                             </div>
 
                             <div className="flex gap-6 mt-12">
-                                <a href="https://github.com/KevinMCruzP" target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Github size={20} /></a>
-                                <a href="https://linkedin.com/in/kevinmcruzp" target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Linkedin size={20} /></a>
-                                <a href="https://instagram.com/kevin.pizarro.cruz" target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Instagram size={20} /></a>
-                                <a href="https://youtube.com/@KevinMCruzP" target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Youtube size={20} /></a>
+                                <a href={config.github}    target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Github size={20} /></a>
+                                <a href={config.linkedin}  target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Linkedin size={20} /></a>
+                                <a href={config.instagram} target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Instagram size={20} /></a>
+                                <a href={config.youtube}   target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Youtube size={20} /></a>
                             </div>
                         </motion.div>
 
