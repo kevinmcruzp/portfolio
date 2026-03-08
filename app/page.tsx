@@ -70,52 +70,53 @@ export default function Home() {
                         `min-h-screen flex items-center pt-20 pb-20 ${isLoading ? "opacity-0" : "opacity-100"} transition-opacity duration-1000 relative`
                     }>
                     <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
-                        {/* Coluna Esquerda: Texto de Apresentação */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 1, delay: 0.5 }}
-                        >
-                            <span className="inline-block text-xs font-mono tracking-[0.3em] text-nordic-bronze uppercase mb-4 border border-nordic-bronze/40 px-3 py-1">
+                        {/* Coluna Esquerda */}
+                        <div className="flex flex-col">
+                            <span className="inline-block self-start text-xs font-mono tracking-[0.3em] text-nordic-bronze uppercase mb-5 border border-nordic-bronze/40 px-3 py-1">
                                 Engenheiro de Software
                             </span>
 
-                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-nordic-gold mb-6 leading-tight">
+                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-nordic-gold mb-4 leading-tight">
                                 <ForgedText text="KEVIN" />
                                 <ForgedText text="PIZARRO" />
                             </h1>
 
-                            <p className="text-lg text-stone-400 max-w-lg leading-relaxed mb-8 border-l-4 border-nordic-iron pl-6">
-                                Engenheiro de Software com foco em frontend e segurança — mais do que código, construo sistemas robustos, escaláveis e com propósito.
+                            <div className="flex items-center gap-3 text-xs font-mono text-nordic-parchment/30 tracking-widest mb-6">
+                                <span>Londrina, BR</span>
+                                <span className="w-1 h-1 rounded-full bg-nordic-bronze/40" />
+                                <span>Aceno Tecnologia</span>
+                                <span className="w-1 h-1 rounded-full bg-nordic-bronze/40" />
+                                <span>Frontend · Segurança</span>
+                            </div>
+
+                            <p className="text-base text-stone-400 max-w-lg leading-relaxed mb-10 border-l-4 border-nordic-iron pl-6">
+                                Mais do que código — construo sistemas robustos, escaláveis e com propósito. Da arquitetura ao detalhe da interface.
                             </p>
 
-                            <div className="flex flex-wrap gap-4">
-                                <Link href="/projects" className="px-8 py-4 bg-nordic-bronze text-white font-serif tracking-widest hover:bg-white hover:text-nordic-wood transition-colors shadow-[0_0_20px_rgba(180,83,9,0.2)]">
+                            <div className="flex flex-wrap items-center gap-4 mb-10">
+                                <Link href="/projects" className="px-8 py-4 bg-nordic-bronze text-white font-serif tracking-widest hover:bg-white hover:text-nordic-wood transition-colors shadow-[0_0_20px_rgba(180,83,9,0.2)] text-sm">
                                     VER PROJETOS
                                 </Link>
-                                <a href={config.cv} target="_blank" rel="noopener noreferrer" className="px-8 py-4 border border-nordic-iron text-stone-400 font-serif tracking-widest hover:border-nordic-gold hover:text-nordic-gold transition-colors flex items-center gap-2">
-                                    <Download size={18} /> CV
+                                <a href={config.cv} target="_blank" rel="noopener noreferrer" className="px-8 py-4 border border-nordic-iron text-stone-400 font-serif tracking-widest hover:border-nordic-gold hover:text-nordic-gold transition-colors flex items-center gap-2 text-sm">
+                                    <Download size={16} /> CV
                                 </a>
-                                <Link href="/about" className="px-8 py-4 border border-nordic-parchment/20 text-nordic-parchment/50 font-serif tracking-widest hover:border-nordic-gold hover:text-nordic-gold transition-colors text-sm flex items-center">
-                                    SOBRE MIM
+                                <Link href="/about" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors text-xs font-serif tracking-widest uppercase underline underline-offset-4 decoration-nordic-parchment/20 hover:decoration-nordic-gold">
+                                    Sobre mim
                                 </Link>
                             </div>
 
-                            <div className="flex gap-6 mt-12">
-                                <a href={config.github}    target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Github size={20} /></a>
-                                <a href={config.linkedin}  target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Linkedin size={20} /></a>
-                                <a href={config.instagram} target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Instagram size={20} /></a>
-                                <a href={config.youtube}   target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Youtube size={20} /></a>
+                            <div className="flex items-center gap-5">
+                                <span className="text-nordic-parchment/20 text-xs font-mono tracking-widest uppercase">Redes</span>
+                                <div className="w-8 h-px bg-nordic-parchment/15" />
+                                <a href={config.github}    target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors"><Github size={18} /></a>
+                                <a href={config.linkedin}  target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors"><Linkedin size={18} /></a>
+                                <a href={config.instagram} target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors"><Instagram size={18} /></a>
+                                <a href={config.youtube}   target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/40 hover:text-nordic-gold transition-colors"><Youtube size={18} /></a>
                             </div>
-                        </motion.div>
+                        </div>
 
                         {/* Coluna Direita: Imagem / Moldura */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1, delay: 0.8 }}
-                            className="relative flex justify-center lg:justify-end"
-                        >
+                        <div className="relative flex justify-center lg:justify-end">
                             <div className="relative w-87.5 h-112.5 md:w-112.5 md:h-137.5">
                                 {/* Halo de luz atmosférico */}
                                 <div className="absolute -inset-10 rounded-t-full blur-3xl bg-amber-900/15 z-0 pointer-events-none" style={{ willChange: "filter", transform: "translateZ(0)" }} />
@@ -128,7 +129,6 @@ export default function Home() {
                                 {/* Container da Imagem */}
                                 <div className="absolute inset-0 bg-nordic-wood rounded-t-full overflow-hidden border-b-4 border-nordic-bronze transition-all duration-700 rune-glow group/photo">
                                     <div className="w-full h-full bg-linear-to-b from-stone-800 to-nordic-void flex items-center justify-center">
-                                        <span className="font-serif text-nordic-iron text-9xl opacity-20">img</span>
                                         <Image
                                             src={photo}
                                             alt="photo"
@@ -154,7 +154,7 @@ export default function Home() {
                                     <div className="text-stone-500 text-xs tracking-widest uppercase">Anos XP</div>
                                 </motion.div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
 
                     <motion.div
