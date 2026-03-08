@@ -206,55 +206,90 @@ export default function Home() {
                             </Link>
                         </div>
 
-                        <div className="space-y-24">
+                        <div className="space-y-32">
                             {FEATURED_PROJECTS.map((project, index) => (
                                 <motion.div
                                     key={project.key}
-                                    initial={{ opacity: 0, y: 50 }}
+                                    initial={{ opacity: 0, y: 60 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.8 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.9, ease: "easeOut" }}
                                     className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}
                                 >
-                                    {/* Imagem do Projeto */}
-                                    <a
-                                        href={project.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-full md:w-3/5 aspect-video bg-nordic-void relative group cursor-pointer overflow-hidden border border-nordic-parchment/10"
-                                    >
-                                        {project.img && (
-                                            <Image
-                                                src={project.img}
-                                                alt={project.alt}
-                                                fill
-                                                className="object-cover group-hover:scale-105 transition-all duration-500"
-                                            />
-                                        )}
-                                        <div className="absolute inset-0 bg-linear-to-tr from-nordic-void/70 to-transparent z-10" />
-                                        <div className="absolute inset-0 bg-nordic-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center">
-                                            <ExternalLink size={28} className="text-nordic-gold" />
-                                        </div>
-                                    </a>
+                                    {/* Imagem */}
+                                    <div className="w-full md:w-3/5 relative">
+                                        {/* Glow ambiente */}
+                                        <div className="absolute -inset-4 bg-nordic-gold/5 blur-2xl rounded-full pointer-events-none" />
+
+                                        <a
+                                            href={project.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="relative block aspect-video bg-nordic-void overflow-hidden group"
+                                        >
+                                            {project.img && (
+                                                <Image
+                                                    src={project.img}
+                                                    alt={project.alt}
+                                                    fill
+                                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                                />
+                                            )}
+                                            {/* Gradiente base */}
+                                            <div className="absolute inset-0 bg-linear-to-tr from-nordic-void/80 via-transparent to-transparent z-10" />
+
+                                            {/* Borda animada no hover */}
+                                            <div className="absolute inset-0 z-20 pointer-events-none">
+                                                <div className="absolute top-0 left-0 w-0 h-px bg-nordic-gold transition-all duration-500 group-hover:w-full" />
+                                                <div className="absolute top-0 right-0 w-px h-0 bg-nordic-gold transition-all duration-500 delay-100 group-hover:h-full" />
+                                                <div className="absolute bottom-0 right-0 w-0 h-px bg-nordic-gold transition-all duration-500 delay-200 group-hover:w-full" />
+                                                <div className="absolute bottom-0 left-0 w-px h-0 bg-nordic-gold transition-all duration-500 delay-300 group-hover:h-full" />
+                                            </div>
+
+                                            {/* Ícone central no hover */}
+                                            <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <div className="w-14 h-14 border border-nordic-gold flex items-center justify-center bg-nordic-void/60 backdrop-blur-sm">
+                                                    <ExternalLink size={22} className="text-nordic-gold" />
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
 
                                     {/* Detalhes */}
-                                    <div className="w-full md:w-2/5 space-y-6">
-                                        <h3 className="text-4xl font-serif text-white">{project.title}</h3>
-                                        <div className="flex flex-wrap gap-3">
+                                    <div className="w-full md:w-2/5 space-y-5 relative">
+                                        {/* Número faded */}
+                                        <span className="absolute -top-8 -left-2 text-[7rem] font-serif font-bold text-nordic-parchment/5 leading-none select-none pointer-events-none">
+                                            {String(index + 1).padStart(2, "0")}
+                                        </span>
+
+                                        <p className="text-xs font-mono tracking-[0.3em] text-nordic-bronze uppercase">
+                                            Projeto {String(index + 1).padStart(2, "0")}
+                                        </p>
+
+                                        <h3 className="text-4xl font-serif text-white leading-tight">{project.title}</h3>
+
+                                        {project.desc && (
+                                            <p className="text-nordic-parchment/60 text-sm leading-relaxed border-l-2 border-nordic-gold/20 pl-4">
+                                                {project.desc}
+                                            </p>
+                                        )}
+
+                                        <div className="flex flex-wrap gap-2 pt-1">
                                             {project.tags.map(t => (
-                                                <span key={t} className="px-3 py-1 bg-nordic-void border border-nordic-parchment/20 text-xs text-nordic-gold font-mono">
+                                                <span key={t} className="px-3 py-1 bg-nordic-void border border-nordic-parchment/15 text-xs text-nordic-gold/80 font-mono">
                                                     {t}
                                                 </span>
                                             ))}
                                         </div>
-                                        <div className="pt-4">
+
+                                        <div className="pt-2">
                                             <a
                                                 href={project.href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex items-center gap-2 text-white hover:text-nordic-gold transition-colors text-sm uppercase tracking-widest font-bold group"
+                                                className="inline-flex items-center gap-2 text-nordic-gold border-b border-nordic-gold/30 hover:border-nordic-gold pb-0.5 transition-colors text-sm uppercase tracking-widest font-serif group"
                                             >
-                                                Ver Projeto <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+                                                Ver Projeto <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform" />
                                             </a>
                                         </div>
                                     </div>

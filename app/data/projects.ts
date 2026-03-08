@@ -9,6 +9,7 @@ import Moveit from "../../public/Moveit.png";
 export type Project = {
   key: string;
   title: string;
+  desc?: string;
   tags: string[];
   img: StaticImageData | null;
   alt: string;
@@ -20,6 +21,7 @@ export const PROJECTS: Project[] = [
   {
     key: "podcast",
     title: "Podcastr",
+    desc: "Plataforma de streaming de podcasts com reprodução contínua, lista de episódios e interface otimizada para uma experiência imersiva de áudio.",
     tags: ["Next.js", "ChakraUI"],
     img: Podcastr,
     alt: "Podcastr",
@@ -29,6 +31,7 @@ export const PROJECTS: Project[] = [
   {
     key: "dash-admin",
     title: "Dashadmin",
+    desc: "Dashboard administrativo, gestão de usuários, gráficos de métricas e interface responsiva para controle de dados.",
     tags: ["Next.js", "ChakraUI"],
     img: Dashadmin,
     alt: "Dashadmin",
@@ -38,6 +41,7 @@ export const PROJECTS: Project[] = [
   {
     key: "reddit-clone",
     title: "Reddit Clone",
+    desc: "Clone funcional do Reddit com autenticação via Firebase, criação de comunidades, posts, votos e feed em tempo real.",
     tags: ["Next.js", "ChakraUI", "Firebase"],
     img: RedditClone,
     alt: "Reddit Clone",
