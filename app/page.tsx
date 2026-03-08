@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Download, ArrowDown, Layout, Database, Code, Shield, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Download, ArrowDown, Layout, Database, Code, Shield, ExternalLink, Instagram, Youtube, Smartphone, Globe } from "lucide-react";
 import { ForgedText } from "./components/ui/animation/ForgetText";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,10 +15,36 @@ import { FEATURED_PROJECTS } from "./data/projects";
 
 // --- DATA ---
 const SKILLS = [
-    { icon: <Layout />, title: "Frontend", desc: "React, Next.js, Tailwind, Motion" },
-    { icon: <Database />, title: "Backend", desc: "Node.js, PostgreSQL, Prisma" },
-    { icon: <Code />, title: "Architecture", desc: "Clean Code, SOLID, Microservices" },
-    { icon: <Shield />, title: "DevOps", desc: "Docker, AWS, CI/CD" },
+    {
+        icon: <Layout />,
+        title: "Frontend",
+        desc: "React, Next.js, TypeScript, TailwindCSS, ChakraUI, Framer Motion",
+    },
+    {
+        icon: <Code />,
+        title: "Backend",
+        desc: "Node.js, Express.js, C#, PHP, Java, Python, Socket.io, JWT",
+    },
+    {
+        icon: <Database />,
+        title: "Banco de Dados",
+        desc: "PostgreSQL, MongoDB, SQLite, Prisma ORM",
+    },
+    {
+        icon: <Shield />,
+        title: "Cloud & DevOps",
+        desc: "AWS, Vercel, Apache, GitHub, Docker, CI/CD",
+    },
+    {
+        icon: <Smartphone />,
+        title: "Mobile",
+        desc: "React Native, Expo",
+    },
+    {
+        icon: <Globe />,
+        title: "Idiomas",
+        desc: "Português (nativo), Español (fluente), English (intermediário)",
+    },
 ];
 
 
@@ -49,13 +75,17 @@ export default function Home() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1, delay: 0.5 }}
                         >
+                            <span className="inline-block text-xs font-mono tracking-[0.3em] text-nordic-bronze uppercase mb-4 border border-nordic-bronze/40 px-3 py-1">
+                                Engenheiro de Software
+                            </span>
+
                             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-nordic-gold mb-6 leading-tight">
                                 <ForgedText text="KEVIN" />
                                 <ForgedText text="PIZARRO" />
                             </h1>
 
                             <p className="text-lg text-stone-400 max-w-lg leading-relaxed mb-8 border-l-4 border-nordic-iron pl-6">
-                                Desenvolvedor focado em interfaces robustas e arquiteturas escaláveis. Transformando código bruto em soluções duradouras.
+                                Engenheiro de Software com foco em frontend e segurança — mais do que código, construo sistemas robustos, escaláveis e com propósito.
                             </p>
 
                             <div className="flex flex-wrap gap-4">
@@ -65,11 +95,16 @@ export default function Home() {
                                 <button className="cursor-pointer px-8 py-4 border border-nordic-iron text-stone-400 font-serif tracking-widest hover:border-nordic-gold hover:text-nordic-gold transition-colors flex items-center gap-2">
                                     <Download size={18} /> CV
                                 </button>
+                                <Link href="/about" className="px-8 py-4 border border-nordic-parchment/20 text-nordic-parchment/50 font-serif tracking-widest hover:border-nordic-gold hover:text-nordic-gold transition-colors text-sm flex items-center">
+                                    SOBRE MIM
+                                </Link>
                             </div>
 
-                            <div className="flex gap-6 mt-12 opacity-60">
-                                <Github className="hover:text-nordic-gold cursor-pointer transition-colors" />
-                                <Linkedin className="hover:text-nordic-gold cursor-pointer transition-colors" />
+                            <div className="flex gap-6 mt-12">
+                                <a href="https://github.com/KevinMCruzP" target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Github size={20} /></a>
+                                <a href="https://linkedin.com/in/kevinmcruzp" target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Linkedin size={20} /></a>
+                                <a href="https://instagram.com/kevin.pizarro.cruz" target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Instagram size={20} /></a>
+                                <a href="https://youtube.com/@KevinMCruzP" target="_blank" rel="noopener noreferrer" className="text-nordic-parchment/50 hover:text-nordic-gold transition-colors"><Youtube size={20} /></a>
                             </div>
                         </motion.div>
 
@@ -138,7 +173,7 @@ export default function Home() {
                             <span className="hidden md:block text-xs font-serif tracking-widest text-nordic-parchment/40">Habilidades & Ferramentas</span>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {SKILLS.map((skill, i) => (
                                 <ObsidianCard key={i} className="h-full">
                                     <div className="mb-4 text-nordic-gold">{skill.icon}</div>
