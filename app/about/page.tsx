@@ -17,18 +17,57 @@ const STACK = [
     { category: "Mobile", items: ["React Native", "Expo"] },
 ];
 
-const TIMELINE = [
+const EXPERIENCE = [
     {
-        year: "Atual",
+        year: "Jan 2024 – Atual",
         role: "Frontend Developer & Segurança",
         place: "Aceno Tecnologia — Londrina, Brasil",
-        desc: "Desenvolvimento frontend e atuação em segurança de sistemas. Construção de interfaces robustas com foco em qualidade, performance e boas práticas de segurança.",
+        desc: "Desenvolvimento de interfaces modernas e atuação em segurança de sistemas. Foco em qualidade, performance e boas práticas de segurança no frontend.",
     },
     {
         year: "2023",
-        role: "Engenheiro de Software",
-        place: "INACAP — Santiago, Chile",
-        desc: "Graduação em Engenharia de Software. Formação técnica e prática em arquitetura de sistemas, algoritmos, redes e engenharia de software.",
+        role: "Desenvolvedor de Software",
+        place: "Departamento de TI — Hospital La Serena, Chile",
+        desc: "Responsável pelo desenvolvimento de sistemas de aplicações web e desktop para o hospital público de La Serena.",
+    },
+    {
+        year: "2019 – 2020",
+        role: "Operador de Cash Logistic",
+        place: "Brinks",
+        desc: "Manipulação física de valores e quadratura na operação interna.",
+    },
+    {
+        year: "2017",
+        role: "Soldado",
+        place: "13º Batalhão de Infantaria Blindado — Ponta Grossa, Brasil",
+        desc: "Serviço militar obrigatório no Exército Brasileiro.",
+    },
+    {
+        year: "2016 / 2018",
+        role: "Marceneiro",
+        place: "D'Luxo Móveis",
+        desc: "Produção de móveis, atendimento ao cliente e administração de operações internas.",
+    },
+];
+
+const EDUCATION = [
+    {
+        year: "2020 – 2023",
+        role: "Engenharia Informática",
+        place: "INACAP — Chile",
+        desc: "Graduação em Engenharia Informática. Formação em arquitetura de sistemas, algoritmos, redes e engenharia de software.",
+    },
+    {
+        year: "2020 – 2022",
+        role: "Analista Programador",
+        place: "INACAP — Chile",
+        desc: "Liderança de equipes com metodologias ágeis, desenvolvimento e análise de soluções Full Stack. Finalizado com a segunda maior nota entre os formandos.",
+    },
+    {
+        year: "2021",
+        role: "React — 200h",
+        place: "Rocketseat",
+        desc: "Construção de interfaces modernas e reativas utilizando React de forma modular e escalável.",
     },
 ];
 
@@ -123,20 +162,47 @@ export default function AboutPage() {
                     className="mb-20"
                 >
                     <h2 className="text-2xl font-serif text-nordic-gold mb-8 pb-4 border-b border-nordic-parchment/10">Trajetória</h2>
-                    <div className="space-y-8">
-                        {TIMELINE.map((item, i) => (
-                            <div key={i} className="flex gap-6">
-                                <div className="flex flex-col items-center">
-                                    <span className="text-xs font-mono text-nordic-bronze tracking-widest whitespace-nowrap pt-1">{item.year}</span>
-                                    <div className="w-px flex-1 bg-nordic-parchment/10 mt-2" />
-                                </div>
-                                <div className="pb-8">
-                                    <h3 className="font-serif text-white text-lg">{item.role}</h3>
-                                    <p className="text-nordic-bronze text-xs tracking-widest uppercase mb-2">{item.place}</p>
-                                    <p className="text-nordic-parchment/60 text-sm leading-relaxed">{item.desc}</p>
-                                </div>
+
+                    <div className="grid md:grid-cols-2 gap-x-16">
+                        {/* Experiência */}
+                        <div>
+                            <h3 className="text-xs font-mono tracking-[0.3em] text-nordic-bronze uppercase mb-6">Experiência</h3>
+                            <div className="space-y-0">
+                                {EXPERIENCE.map((item, i) => (
+                                    <div key={i} className="flex gap-6">
+                                        <div className="flex flex-col items-center">
+                                            <span className="text-xs font-mono text-nordic-bronze/60 tracking-widest whitespace-nowrap pt-1">{item.year}</span>
+                                            {i < EXPERIENCE.length - 1 && <div className="w-px flex-1 bg-nordic-parchment/10 mt-2" />}
+                                        </div>
+                                        <div className="pb-8">
+                                            <h4 className="font-serif text-white text-base">{item.role}</h4>
+                                            <p className="text-nordic-bronze text-xs tracking-widest uppercase mb-2">{item.place}</p>
+                                            <p className="text-nordic-parchment/60 text-sm leading-relaxed">{item.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Formação */}
+                        <div>
+                            <h3 className="text-xs font-mono tracking-[0.3em] text-nordic-bronze uppercase mb-6">Formação</h3>
+                            <div className="space-y-0">
+                                {EDUCATION.map((item, i) => (
+                                    <div key={i} className="flex gap-6">
+                                        <div className="flex flex-col items-center">
+                                            <span className="text-xs font-mono text-nordic-bronze/60 tracking-widest whitespace-nowrap pt-1">{item.year}</span>
+                                            {i < EDUCATION.length - 1 && <div className="w-px flex-1 bg-nordic-parchment/10 mt-2" />}
+                                        </div>
+                                        <div className="pb-8">
+                                            <h4 className="font-serif text-white text-base">{item.role}</h4>
+                                            <p className="text-nordic-bronze text-xs tracking-widest uppercase mb-2">{item.place}</p>
+                                            <p className="text-nordic-parchment/60 text-sm leading-relaxed">{item.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </motion.div>
 
