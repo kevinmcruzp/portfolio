@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Download, ArrowDown, Layout, Database, Code, Shield, ExternalLink, Instagram, Youtube, Smartphone, Globe } from "lucide-react";
+import { Github, Linkedin, Download, ArrowDown, Layout, Database, Code, Shield, ExternalLink, Instagram, Youtube, Smartphone, Globe, Mail, Phone, MessageCircle } from "lucide-react";
 import { ForgedText } from "./components/ui/animation/ForgetText";
 import Image from "next/image";
 import Link from "next/link";
@@ -270,6 +270,103 @@ export default function Home() {
                             >
                                 Ver todos os projetos
                             </Link>
+                        </div>
+                    </div>
+                </section>
+                {/* --- CONTATO --- */}
+                <section id="contact" className="py-32 px-6 relative z-10">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="mb-16 flex items-end justify-between border-b border-nordic-parchment/10 pb-6">
+                            <div>
+                                <h2 className="text-4xl font-serif text-nordic-gold mb-3">Vamos Forjar Algo</h2>
+                                <p className="text-nordic-parchment/60 max-w-md">
+                                    Aberto a oportunidades, freelas e conversas sobre tecnologia. Escolha a runa e entre em contato.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-12">
+                            {/* Canais diretos */}
+                            <div className="space-y-4">
+                                <motion.a
+                                    href={`mailto:${config.email}`}
+                                    whileHover={{ x: 6 }}
+                                    className="flex items-center gap-5 p-5 border border-nordic-parchment/10 hover:border-nordic-gold/50 transition-colors duration-300 group"
+                                >
+                                    <div className="w-12 h-12 border border-nordic-iron group-hover:border-nordic-gold flex items-center justify-center transition-colors duration-300 shrink-0">
+                                        <Mail size={20} className="text-nordic-parchment/50 group-hover:text-nordic-gold transition-colors duration-300" />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs font-mono tracking-widest text-nordic-bronze uppercase mb-1">E-mail</p>
+                                        <p className="text-nordic-parchment/80 text-sm">{config.email}</p>
+                                    </div>
+                                </motion.a>
+
+                                <motion.a
+                                    href={config.whatsapp}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{ x: 6 }}
+                                    className="flex items-center gap-5 p-5 border border-nordic-parchment/10 hover:border-nordic-gold/50 transition-colors duration-300 group"
+                                >
+                                    <div className="w-12 h-12 border border-nordic-iron group-hover:border-nordic-gold flex items-center justify-center transition-colors duration-300 shrink-0">
+                                        <MessageCircle size={20} className="text-nordic-parchment/50 group-hover:text-nordic-gold transition-colors duration-300" />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs font-mono tracking-widest text-nordic-bronze uppercase mb-1">WhatsApp</p>
+                                        <p className="text-nordic-parchment/80 text-sm">{config.phone}</p>
+                                    </div>
+                                </motion.a>
+
+                                <motion.a
+                                    href={config.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{ x: 6 }}
+                                    className="flex items-center gap-5 p-5 border border-nordic-parchment/10 hover:border-nordic-gold/50 transition-colors duration-300 group"
+                                >
+                                    <div className="w-12 h-12 border border-nordic-iron group-hover:border-nordic-gold flex items-center justify-center transition-colors duration-300 shrink-0">
+                                        <Linkedin size={20} className="text-nordic-parchment/50 group-hover:text-nordic-gold transition-colors duration-300" />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs font-mono tracking-widest text-nordic-bronze uppercase mb-1">LinkedIn</p>
+                                        <p className="text-nordic-parchment/80 text-sm">linkedin.com/in/kevinmcruzp</p>
+                                    </div>
+                                </motion.a>
+                            </div>
+
+                            {/* Redes e encerramento */}
+                            <div className="flex flex-col justify-between">
+                                <div className="space-y-6">
+                                    <p className="text-nordic-parchment/50 text-sm leading-relaxed border-l-2 border-nordic-gold/20 pl-4">
+                                        Prefiro conversas diretas. Se tiver uma ideia, projeto ou proposta, manda mensagem — respondo rápido.
+                                    </p>
+                                    <div className="flex gap-4">
+                                        {[
+                                            { href: config.github,    icon: <Github size={18} />,    label: "GitHub"    },
+                                            { href: config.instagram, icon: <Instagram size={18} />, label: "Instagram" },
+                                            { href: config.youtube,   icon: <Youtube size={18} />,   label: "YouTube"   },
+                                        ].map(({ href, icon, label }) => (
+                                            <a
+                                                key={label}
+                                                href={href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                title={label}
+                                                className="w-11 h-11 border border-nordic-iron hover:border-nordic-gold flex items-center justify-center text-nordic-parchment/40 hover:text-nordic-gold transition-all duration-300"
+                                            >
+                                                {icon}
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Assinatura */}
+                                <div className="mt-16 pt-8 border-t border-nordic-parchment/10">
+                                    <p className="font-serif text-nordic-gold/40 text-xs tracking-[0.3em] uppercase">Kevin Pizarro © {new Date().getFullYear()}</p>
+                                    <p className="text-nordic-parchment/20 text-xs mt-1 tracking-widest">Forjado com Next.js & Tailwind</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
