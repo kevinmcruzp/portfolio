@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import doorsOfDurin from "../../../../public/doors-of-durin.png";
 
-export const GateLoader = ({ onComplete }: { onComplete: () => void }) => {
+export const GateLoader = ({ onComplete, tagline = "Speak, friend, and enter" }: { onComplete: () => void; tagline?: string }) => {
     return (
         <motion.div
             className="fixed inset-0 z-100 flex items-center justify-center bg-nordic-void overflow-hidden"
@@ -62,7 +62,7 @@ export const GateLoader = ({ onComplete }: { onComplete: () => void }) => {
                 animate={{ opacity: [0, 1, 1, 0] }}
                 transition={{ duration: 4, times: [0, 0.2, 0.6, 0.9] }}
             >
-                Speak, friend, and enter
+                {tagline}
             </motion.p>
         </motion.div>
     );

@@ -1,0 +1,102 @@
+{
+  "loader": {
+    "tagline": "Habla, amigo, y entra"
+  },
+  "nav": {
+    "home": "Inicio",
+    "saga": "Saga",
+    "works": "Obras",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "badge": "Ingeniero de Software",
+    "focus": "Frontend · Seguridad",
+    "description": "Más que código — construyo sistemas robustos, escalables y con propósito. De la arquitectura al detalle de la interfaz.",
+    "cta_projects": "VER PROYECTOS",
+    "cta_about": "Sobre mí",
+    "socials_label": "Redes",
+    "years_xp": "Años XP"
+  },
+  "saga": {
+    "title": "Mi Saga",
+    "subtitle": "Habilidades & Herramientas",
+    "skill_frontend": "Frontend",
+    "skill_backend": "Backend",
+    "skill_database": "Base de Datos",
+    "skill_cloud": "Cloud & DevOps",
+    "skill_mobile": "Mobile",
+    "skill_languages": "Idiomas",
+    "lang_pt": "Portugués — nativo",
+    "lang_es": "Español — nativo",
+    "lang_en": "English — intermedio"
+  },
+  "works": {
+    "title": "Grandes Obras",
+    "description": "Cada proyecto es tratado como un arma única: hecha a medida, equilibrada y letalmente eficiente.",
+    "see_all": "Ver todos",
+    "project_label": "Proyecto",
+    "cta": "Ver Proyecto",
+    "mobile_cta": "Ver todos los proyectos"
+  },
+  "contact": {
+    "title": "Vamos a Forjar Algo",
+    "description": "Abierto a oportunidades, freelance y conversaciones sobre tecnología. Elige la runa y contáctame.",
+    "direct_msg": "Prefiero las conversaciones directas. Si tienes una idea, proyecto o propuesta, manda un mensaje — respondo rápido.",
+    "footer_built": "Forjado con Next.js & Tailwind"
+  },
+  "about": {
+    "back": "Volver",
+    "badge": "Ingeniero de Software",
+    "bio1": "Soy Ingeniero de Software egresado de INACAP (Chile), con base en Londrina, Brasil. Actualmente trabajo en Aceno Tecnologia con foco en desarrollo frontend y seguridad de sistemas.",
+    "bio2": "A lo largo de mi trayectoria trabajé como Full Stack, lo que me dio una visión amplia de los sistemas — bases de datos, APIs, infraestructura y cloud. Ese background me permite tomar decisiones más precisas en el frontend e identificar riesgos de seguridad que van más allá de la capa de interfaz. Me apasiona la innovación y la tecnología, siempre aprendiendo — actualmente mejorando mi inglés y explorando la creación de contenido en YouTube.",
+    "languages_spoken": "Português · Español · English (intermedio)",
+    "timeline_title": "Trayectoria",
+    "experience_label": "Experiencia",
+    "education_label": "Formación",
+    "arsenal_title": "Arsenal Técnico",
+    "beyond_title": "Más allá del Código",
+    "beyond1": "Antes de entrar al mundo de la tecnología, trabajé como <gold>pescador</gold> y <gold>carpintero</gold> — oficios que me enseñaron paciencia, precisión y el valor de construir cosas con las propias manos. Esa mentalidad acompaña cada línea de código que escribo.",
+    "beyond2": "Tengo interés en crear <gold>contenido en YouTube</gold> sobre desarrollo y tecnología. Creo que enseñar es la mejor forma de consolidar el conocimiento — y que la comunidad crece cuando compartimos lo que sabemos.",
+    "stack_languages": "Lenguajes",
+    "stack_frontend": "Frontend",
+    "stack_backend": "Backend",
+    "stack_database": "Base de Datos",
+    "stack_cloud": "Cloud & DevOps",
+    "stack_mobile": "Mobile",
+    "exp_current": "Ene 2024 – Actual",
+    "exp_role1": "Frontend Developer & Seguridad",
+    "exp_place1": "Aceno Tecnologia — Londrina, Brasil",
+    "exp_desc1": "Desarrollo de interfaces modernas y trabajo en seguridad de sistemas. Foco en calidad, performance y buenas prácticas de seguridad en el frontend.",
+    "exp_role2": "Desarrollador de Software",
+    "exp_place2": "Departamento de TI — Hospital La Serena, Chile",
+    "exp_desc2": "Responsable del desarrollo de sistemas de aplicaciones web y desktop para el hospital público de La Serena.",
+    "exp_role3": "Operador de Cash Logistic",
+    "exp_place3": "Brinks",
+    "exp_desc3": "Manipulación física de valores y cuadratura en la operación interna.",
+    "exp_role4": "Soldado",
+    "exp_place4": "13º Batallón de Infantería Blindado — Ponta Grossa, Brasil",
+    "exp_desc4": "Servicio militar obligatorio en el Ejército Brasileño.",
+    "exp_role5": "Carpintero",
+    "exp_place5": "D'Luxo Móveis",
+    "exp_desc5": "Producción de muebles, atención al cliente y administración de operaciones internas.",
+    "edu_role1": "Ingeniería Informática",
+    "edu_place1": "INACAP — Chile",
+    "edu_desc1": "Graduación en Ingeniería Informática. Formación en arquitectura de sistemas, algoritmos, redes e ingeniería de software.",
+    "edu_role2": "Analista Programador",
+    "edu_place2": "INACAP — Chile",
+    "edu_desc2": "Liderazgo de equipos con metodologías ágiles, desarrollo y análisis de soluciones Full Stack. Finalizado con la segunda mayor nota entre los egresados.",
+    "edu_role3": "React — 200h",
+    "edu_place3": "Rocketseat",
+    "edu_desc3": "Construcción de interfaces modernas y reactivas utilizando React de forma modular y escalable."
+  },
+  "projects_page": {
+    "back": "Volver",
+    "title": "Grandes Obras",
+    "count": "{count} proyectos forjados"
+  },
+  "projects_data": {
+    "podcast": { "desc": "Plataforma de streaming de podcasts con reproducción continua, lista de episodios e interfaz optimizada para una experiencia de audio inmersiva." },
+    "dash-admin": { "desc": "Dashboard administrativo, gestión de usuarios, gráficos de métricas e interfaz responsiva para el control de datos." },
+    "reddit-clone": { "desc": "Clone funcional de Reddit con autenticación via Firebase, creación de comunidades, posts, votos y feed en tiempo real." }
+  }
+}

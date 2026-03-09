@@ -1,0 +1,102 @@
+{
+  "loader": {
+    "tagline": "Speak, friend, and enter"
+  },
+  "nav": {
+    "home": "Home",
+    "saga": "Saga",
+    "works": "Works",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Software Engineer",
+    "focus": "Frontend · Security",
+    "description": "More than code — I build robust, scalable systems with purpose. From architecture to interface detail.",
+    "cta_projects": "VIEW PROJECTS",
+    "cta_about": "About me",
+    "socials_label": "Socials",
+    "years_xp": "Years XP"
+  },
+  "saga": {
+    "title": "My Saga",
+    "subtitle": "Skills & Tools",
+    "skill_frontend": "Frontend",
+    "skill_backend": "Backend",
+    "skill_database": "Database",
+    "skill_cloud": "Cloud & DevOps",
+    "skill_mobile": "Mobile",
+    "skill_languages": "Languages",
+    "lang_pt": "Portuguese — native",
+    "lang_es": "Spanish — native",
+    "lang_en": "English — intermediate"
+  },
+  "works": {
+    "title": "Featured Works",
+    "description": "Each project is treated as a unique weapon: custom-made, balanced, and lethally efficient.",
+    "see_all": "See all",
+    "project_label": "Project",
+    "cta": "View Project",
+    "mobile_cta": "View all projects"
+  },
+  "contact": {
+    "title": "Let's Forge Something",
+    "description": "Open to opportunities, freelance and conversations about technology. Choose your rune and get in touch.",
+    "direct_msg": "I prefer direct conversations. If you have an idea, project or proposal, send a message — I reply fast.",
+    "footer_built": "Forged with Next.js & Tailwind"
+  },
+  "about": {
+    "back": "Back",
+    "badge": "Software Engineer",
+    "bio1": "I'm a Software Engineer graduated from INACAP (Chile), currently based in Londrina, Brazil. I work at Aceno Tecnologia focused on frontend development and systems security.",
+    "bio2": "Throughout my career I've worked as a Full Stack developer, which gave me a broad view of systems — databases, APIs, infrastructure and cloud. That background allows me to make more precise decisions in the frontend and identify security risks beyond the interface layer. I'm passionate about innovation and technology, always learning — currently improving my English and exploring content creation on YouTube.",
+    "languages_spoken": "Portuguese · Spanish · English (intermediate)",
+    "timeline_title": "Journey",
+    "experience_label": "Experience",
+    "education_label": "Education",
+    "arsenal_title": "Technical Arsenal",
+    "beyond_title": "Beyond the Code",
+    "beyond1": "Before entering the tech world, I worked as a <gold>fisherman</gold> and a <gold>carpenter</gold> — trades that taught me patience, precision, and the value of building things with your own hands. That mindset follows every line of code I write.",
+    "beyond2": "I'm interested in creating <gold>YouTube content</gold> about development and technology. I believe teaching is the best way to consolidate knowledge — and that the community grows when we share what we know.",
+    "stack_languages": "Languages",
+    "stack_frontend": "Frontend",
+    "stack_backend": "Backend",
+    "stack_database": "Database",
+    "stack_cloud": "Cloud & DevOps",
+    "stack_mobile": "Mobile",
+    "exp_current": "Jan 2024 – Present",
+    "exp_role1": "Frontend Developer & Security",
+    "exp_place1": "Aceno Tecnologia — Londrina, Brazil",
+    "exp_desc1": "Development of modern interfaces and security work on systems. Focus on quality, performance and good security practices in the frontend.",
+    "exp_role2": "Software Developer",
+    "exp_place2": "IT Department — Hospital La Serena, Chile",
+    "exp_desc2": "Responsible for developing web and desktop application systems for the public hospital of La Serena.",
+    "exp_role3": "Cash Logistics Operator",
+    "exp_place3": "Brinks",
+    "exp_desc3": "Physical handling of valuables and balancing in internal operations.",
+    "exp_role4": "Soldier",
+    "exp_place4": "13th Armored Infantry Battalion — Ponta Grossa, Brazil",
+    "exp_desc4": "Mandatory military service in the Brazilian Army.",
+    "exp_role5": "Carpenter",
+    "exp_place5": "D'Luxo Móveis",
+    "exp_desc5": "Furniture production, customer service and administration of internal operations.",
+    "edu_role1": "Computer Engineering",
+    "edu_place1": "INACAP — Chile",
+    "edu_desc1": "Degree in Computer Engineering. Training in systems architecture, algorithms, networks and software engineering.",
+    "edu_role2": "Software Analyst Programmer",
+    "edu_place2": "INACAP — Chile",
+    "edu_desc2": "Team leadership with agile methodologies, development and analysis of Full Stack solutions. Graduated with the second highest grade among peers.",
+    "edu_role3": "React — 200h",
+    "edu_place3": "Rocketseat",
+    "edu_desc3": "Building modern and reactive interfaces using React in a modular and scalable way."
+  },
+  "projects_page": {
+    "back": "Back",
+    "title": "Featured Works",
+    "count": "{count} forged projects"
+  },
+  "projects_data": {
+    "podcast": { "desc": "Podcast streaming platform with continuous playback, episode list and interface optimized for an immersive audio experience." },
+    "dash-admin": { "desc": "Administrative dashboard, user management, metrics charts and responsive interface for data control." },
+    "reddit-clone": { "desc": "Functional Reddit clone with Firebase authentication, community creation, posts, votes and real-time feed." }
+  }
+}
