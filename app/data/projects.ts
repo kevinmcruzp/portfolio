@@ -5,6 +5,8 @@ import Dashadmin from "../../public/Dashadmin.png";
 import RedditClone from "../../public/RedditClone.png";
 import DragAndDrop from "../../public/DragAndDrop.png";
 import Moveit from "../../public/Moveit.png";
+import Brazuca from "../../public/brazuca.jpeg";
+import FinanceControl from "../../public/financeControl.jpeg";
 
 export type Project = {
   key: string;
@@ -19,13 +21,12 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    key: "podcast",
-    title: "Podcastr",
-    desc: "Plataforma de streaming de podcasts com reprodução contínua, lista de episódios e interface otimizada para uma experiência imersiva de áudio.",
-    tags: ["Next.js", "ChakraUI"],
-    img: Podcastr,
-    alt: "Podcastr",
-    href: "https://podcastr-next-kevinmcruzp.vercel.app/",
+    key: "finance-control",
+    title: "Finance Control",
+    tags: ["React", "TypeScript", "Styled Components"],
+    img: FinanceControl,
+    alt: "Finance Control",
+    href: "https://dtmoney-finance-control-reactjs.vercel.app",
     featured: true,
   },
   {
@@ -39,6 +40,32 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
+    key: "messages",
+    title: "Messages",
+    tags: ["React", "TypeScript", "Sass", "Socket.io"],
+    img: MessageImg,
+    alt: "Messages",
+    href: "https://dowhile-messages-reactjs.vercel.app/",
+    featured: true,
+  },
+  {
+    key: "brazuca",
+    title: "Brazuca",
+    tags: ["Next.js", "Tailwind", "TypeScript"],
+    img: Brazuca,
+    alt: "Brazuca",
+    href: "https://brazucas-front.vercel.app",
+  },
+  {
+    key: "podcast",
+    title: "Podcastr",
+    desc: "Plataforma de streaming de podcasts com reprodução contínua, lista de episódios e interface otimizada para uma experiência imersiva de áudio.",
+    tags: ["Next.js", "ChakraUI"],
+    img: Podcastr,
+    alt: "Podcastr",
+    href: "https://podcastr-next-kevinmcruzp.vercel.app/",
+  },
+  {
     key: "reddit-clone",
     title: "Reddit Clone",
     desc: "Clone funcional do Reddit com autenticação via Firebase, criação de comunidades, posts, votos e feed em tempo real.",
@@ -46,15 +73,6 @@ export const PROJECTS: Project[] = [
     img: RedditClone,
     alt: "Reddit Clone",
     href: "https://reddit-clone-nextjs-firebase-gamma.vercel.app/",
-    featured: true,
-  },
-  {
-    key: "messages",
-    title: "Messages",
-    tags: ["ReactJS", "Sass"],
-    img: MessageImg,
-    alt: "Messages",
-    href: "https://dowhile-messages-reactjs.vercel.app/",
   },
   {
     key: "drag-and-drop",

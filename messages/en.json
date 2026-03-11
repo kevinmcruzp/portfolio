@@ -97,6 +97,9 @@
   "projects_data": {
     "podcast": { "desc": "Podcast streaming platform with continuous playback, episode list and interface optimized for an immersive audio experience." },
     "dash-admin": { "desc": "Administrative dashboard, user management, metrics charts and responsive interface for data control." },
-    "reddit-clone": { "desc": "Functional Reddit clone with Firebase authentication, community creation, posts, votes and real-time feed." }
+    "reddit-clone": { "desc": "Functional Reddit clone with Firebase authentication, community creation, posts, votes and real-time feed." },
+    "messages": { "desc": "Real-time instant messaging app with multi-user support via WebSocket." },
+    "brazuca": { "desc": "Sports management platform with team control, match scheduling and statistics for amateur and professional leagues." },
+    "finance-control": { "desc": "Personal finance control app with income and expense tracking, categories and a monthly summary dashboard." }
   }
 }
