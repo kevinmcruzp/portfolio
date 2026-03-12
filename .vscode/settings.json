@@ -2,5 +2,6 @@
     "prisma-smart-formatter.typescriptreact.defaultFormatter": "vscode.typescript-language-features",
     "cSpell.words": [
         "nordic"
-    ]
+    ],
+    "prisma-smart-formatter.typescript.defaultFormatter": "esbenp.prettier-vscode"
 }

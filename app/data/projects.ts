@@ -36,7 +36,7 @@ export const PROJECTS: Project[] = [
     tags: ["Next.js", "ChakraUI"],
     img: Dashadmin,
     alt: "Dashadmin",
-    href: "https://dashadmin-kevinmcruzp.vercel.app/",
+    href: "https://dashadmin-zeta.vercel.app/",
     featured: true,
   },
   {
